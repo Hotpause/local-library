@@ -140,13 +140,14 @@ exports.author_delete_post = asyncHandler(async (req, res, next) => {
     res.redirect("/catalog/authors");
   }
 });
-
+const debug = require("debug")("author");
 // Display Author update form on GET.
 exports.author_update_get = asyncHandler(async (req, res, next) => {
   const author = await Author.findById(req.params.id).exec();
 
   if (author === null) {
     // No results.
+    debug(`id not found on update: ${req.params.id}`);
     const err = new Error("author not found");
     err.status = 404;
     return next(err);
