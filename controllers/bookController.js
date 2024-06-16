@@ -260,7 +260,22 @@ exports.book_update_get = asyncHandler(async (req, res, next) => {
     book: book,
   });
 });
-
+// *
+// *
+// *
+// *
+// *
+// *
+// *
+// *
+// *
+// *
+// *
+// *
+// *
+// *
+// *
+// *
 // Handle book update on POST.
 exports.book_update_post = [
   // Convert the genre to an array.
